@@ -17,13 +17,13 @@ class SongSeeder extends Seeder
         DB::table('songs')->insert([
             'title' => "Maths",
             'duration' => 415,
-            'artist' => "deadmau5",
+            'artist' => "Deadmau5",
         ]);
 
         DB::table('songs')->insert([
             'title' => "Strobe",
             'duration' => 634,
-            'artist' => "deadmau5",
+            'artist' => "Deadmau5",
         ]);
 
         DB::table('songs')->insert([

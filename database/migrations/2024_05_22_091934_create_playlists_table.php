@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('playlists', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('creator');
             $table->timestamps();
         });
     }
