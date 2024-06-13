@@ -14,34 +14,34 @@ class SongSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('songs')->insert([
+        $id = DB::table('songs')->insertGetId([
             'title' => "Maths",
             'duration' => 415,
-            'artist' => "Deadmau5",
+        ]);
+
+        DB::table('artist_song')->insert([
+            'artist_id' => ArtistSeeder::$id,
+            'song_id' => $id
         ]);
 
         DB::table('songs')->insert([
             'title' => "Strobe",
             'duration' => 634,
-            'artist' => "Deadmau5",
         ]);
 
         DB::table('songs')->insert([
             'title' => "Zenith",
             'duration' => 208,
-            'artist' => "4Ever",
         ]);
 
         DB::table('songs')->insert([
             'title' => "Project Ledg 2024",
             'duration' => 144,
-            'artist' => "ASUNDER, Gutterommet",
         ]);
 
         DB::table('songs')->insert([
             'title' => "ACID",
             'duration' => 142,
-            'artist' => "4Ever",
         ]);
     }
 }

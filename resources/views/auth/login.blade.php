@@ -38,7 +38,9 @@
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
-
+            <x-primary-button onclick="location.replace('{{route('register')}}')" type="button" class="ms-3">
+                {{ __('Register') }}
+            </x-primary-button>
             <x-primary-button class="ms-3">
                 {{ __('Log in') }}
             </x-primary-button>

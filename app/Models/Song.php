@@ -15,4 +15,14 @@ class Song extends Model
         return $timeString[0] === '0' ? substr($timeString, 1) : $timeString;
 
     }
+
+    public function playlists()
+    {
+        return $this->belongsToMany(Playlist::class);
+    }
+
+    public function artists()
+    {
+        return $this->belongsToMany(Artist::class);
+    }
 }

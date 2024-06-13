@@ -22,23 +22,25 @@
                     <table style="border-collapse: collapse; width: 100%; border-spacing: 0;">
                         <thead>
                         <tr>
-                            <th style="border: 1px solid #ddd; padding: 8px;">Title</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">Name of playlist</th>
                             <th style="border: 1px solid #ddd; padding: 8px;">Creator</th>
                             <th style="border: 1px solid #ddd; padding: 8px;">Songs</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($playlists as $playlist)
-                            <tr>
-                                <td style="border: 1px solid #ddd; padding: 2%;">{{ $playlist->title }}</td>
-                                <td style="border: 1px solid #ddd; padding: 8px;">{{ $playlist->creator }}</td>
-                                <td style="border: 1px solid #ddd; padding: 8px;">
-                                    @foreach($playlist->Songs as $song)
-                                        {{ $song->title }}<br>
-                                    @endforeach
-                                </td>
-                            </tr>
-                        @endforeach
+                            @foreach($playlists as $playlist)
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 2%;">
+                                        {{$playlist->title}}
+                                    </td>
+                                    <td style="border: 1px solid #ddd; padding: 2%;">
+                                        {{$playlist->creator}}
+                                    </td>
+                                    <td style="border: 1px solid #ddd; padding: 2%;">
+                                        @foreach($playlist->songs as $song)@if(!$loop -> first), @endif{{$song->title}}@endforeach
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
 
